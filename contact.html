@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timeless Treasures - Contact</title>
+  <style>
+    :root {
+      --brand-color: rgb(139, 139, 139);
+        --bg-color: #ffffffff;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: white;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-container {
+      background-color: var(--brand-color);
+      padding: 5px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      height: 75px;
+      width: 75px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem;
+      margin-right: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--bg-color);
+      font-weight: bold;
+    }
+
+    section.hero {
+      padding-top: 100px;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: row;
+      padding: 4rem 2rem;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .contact-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 350px;
+      background-color: rgb(139, 139, 139);
+      padding: 2rem;
+      border-radius: 8px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: none;
+      background-color: #646464;
+      color: white;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .required {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-left: 0.2rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background-color: #646464;
+      border: none;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+
+    button:hover {
+      background-color: #747474;
+    }
+
+    footer {
+      background-color: var(--brand-color);
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      margin-bottom: 0px
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <section class="hero"></section>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <img src="TT White Logo.png" alt="Logo" />
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-image">
+      <img src="TT Abt Us Img (1).jpeg" alt="Contact Booth" />
+    </div>
+
+    <div class="contact-form">
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name <span class="required">(required)</span></label>
+            <input type="text" id="first-name" name="first_name" required />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="required">(required)</span></label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Comments/Questions <span class="required">(required)</span></label>
+          <textarea id="comments" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Timeless Treasures. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("CU_pQuc52EWhxeLO4"); // Replace with your EmailJS public key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_jgyk5jo", "template_vjivaip", this)
+      .then(function() {
+        alert("Message sent successfully!");
+        document.getElementById("contact-form").reset();
+      }, function(error) {
+        alert("Failed to send message. " + error.text);
+      });
+  });
+</script>
+
+</body>
+</html>

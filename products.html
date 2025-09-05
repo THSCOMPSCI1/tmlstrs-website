@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timeless Treasures</title>
+  <style>
+    :root {
+      --brand-color: rgb(139, 139, 139);
+        --bg-color: #ffffffff;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: white;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-container {
+      background-color: var(--brand-color);
+      padding: 5px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 75px;
+      width: 75px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem;
+      margin-right: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--bg-color);
+      font-weight: bold;
+    }
+
+    section.hero {
+      padding-top: 75px;
+    }
+
+    .products-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .products-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .products-container {
+      width: 100%;
+      max-width: 250px;
+      background-color: var(--brand-color);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .products-container img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .about-text {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0;
+      color: rgb(255, 255, 255);
+    }
+
+    footer {
+      background-color: var(--brand-color);
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 0.5rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <section class="hero"></section>
+
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="TT White Logo.png" alt="Logo" />
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="products-wrapper">
+      <div class="products-row">
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 1</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 2</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 3</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 4</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 5</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 6</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 7</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 8</h3>
+            <p>Description</p>
+          </div>
+        </div>
+
+        <div class="products-container">
+          <img src="TT Abt Us Img (1).jpeg" />
+          <div class="about-text">
+            <h3>Product 9</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Timeless Treasures. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
